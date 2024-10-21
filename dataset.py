@@ -5,9 +5,7 @@ login(token="")
 # ds = load_dataset("codeparrot/github-code", streaming=True, split="train", languages=["Python"])
 # print(next(iter(ds))["code"])
 # from datasets import load_dataset
-# ds = load_dataset("transformersbook/codeparrot", streaming=True, split="train")
-# print(ds.info)
-# print(next(iter(ds))["content"])
+
 
 # For pretraining
 """
@@ -30,11 +28,14 @@ WHERE
       AND (c.size BETWEEN 1024 AND 1048575))
 """
 from datasets import load_dataset
-# 5.17M rows
-ds = load_dataset("codeparrot/codeparrot-clean", streaming=True, split="train")
-iter_dataset = iter(ds)
-
-print(next(iter_dataset)["content"])
+# 15M rows
+#
+ds = load_dataset("transformersbook/codeparrot", streaming=True, split="train")
+print(ds.info)
+print(next(iter(ds))["content"])
+# ds = load_dataset("codeparrot/codeparrot-clean", streaming=True, split="train")
+# iter_dataset = iter(ds)
+# print(next(iter_dataset)["content"])
 
 # For fine-tuning
 from datasets import load_dataset
