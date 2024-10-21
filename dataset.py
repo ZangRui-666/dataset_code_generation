@@ -11,7 +11,7 @@ login(token="")
 
 # For pretraining
 """
-Using the query
+Get the data from BigQuery Using the query
 SELECT
   f.repo_name, f.path, c.copies, c.size, c.content, l.license
 FROM
@@ -36,7 +36,7 @@ iter_dataset = iter(ds)
 
 print(next(iter_dataset)["content"])
 
-# For fine tuning
+# For fine-tuning
 from datasets import load_dataset
 
 # Load the dataset
