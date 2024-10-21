@@ -30,7 +30,7 @@ WHERE
       AND (c.size BETWEEN 1024 AND 1048575))
 """
 from datasets import load_dataset
-
+# 5.17M rows
 ds = load_dataset("codeparrot/codeparrot-clean", streaming=True, split="train")
 iter_dataset = iter(ds)
 
